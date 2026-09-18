@@ -7,10 +7,15 @@ class Student:
     def display_info(self):
         return f"Name: {self.name}, Roll: {self.roll}, Marks: {self.marks}"
 
-    def total_marks(self):
-        return sum(self.marks)
+    def is_pass(self):
+        average = sum(self.marks) / len(self.marks)
+        if average >= 40:
+            return "Pass"
+        else:
+            return "Fail"
 
 
 student1 = Student("Saida", 101, [85, 90, 78, 92])
 print(student1.display_info())
-print("Total Marks:", student1.total_marks())
+print("Result:", student1.is_pass())
+
